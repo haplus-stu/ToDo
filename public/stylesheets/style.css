@@ -1,0 +1,213 @@
+
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  font-family: 'Noto Sans JP', "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+.page_wrapper{
+  width: 100%;
+  height: 700px;
+
+}
+
+.menu_wrapper{
+  position: relative;
+}
+
+#menu_btn{
+  width: 60px;
+  height: 60px;
+  right: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+li{
+  list-style: none;
+}
+
+#need_login{
+
+}
+
+#active_task{
+  margin:  8vh 0 7vh 0;
+  text-align: center;
+}
+
+.menu_wrapper .menu_container{
+  position: absolute;
+  top: 0;
+  right: -300px;
+  transition: 0.3s ease-out;
+  height: 100%;
+}
+
+.menu_wrapper .menu_container.open{
+  right: 0;
+  transition: 0.3s ease-out;
+  background-color:rgba(12,77,142,.4);
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
+.menu_wrapper .menu_container.open .menu_nav{
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  right: 0;
+}
+
+.menu{
+  margin-top: 10vh;
+}
+
+.menu_nav{
+  background-color:rgb(12,77,142);
+}
+
+#title{
+  margin-top: 40px;
+  margin-bottom: 2%;
+  text-align: center;
+  color: #f4f5f7;
+}
+
+.delete{
+  width: 30px;
+  height: 30px;
+}
+
+#nowTask #comleteTask{
+  display: block;
+  width: 100%;
+  text-align: center;
+  list-style:none;
+}
+
+.task_item{
+  display: block;
+  width: 500px;
+  height: 80px;
+  border: solid gray;
+  border-radius: 5px;
+  background-color:   rgb(219, 219, 219);
+  margin: 0 auto;
+}
+
+#nowTask .task_item{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.check_mark{
+  color: green;
+  float: left;
+}
+
+.complete_task_item,.task_item{
+  box-shadow: 2.5px 2.5px rgba(196, 196, 196, 0.788);
+  padding: 8px 5px;
+}
+
+.complete_task_item{
+  display: block;
+  width: 500px;
+  height: 83px;
+  border: solid gray;
+  border-radius: 5px;
+  background-color:  rgb(219, 219, 219);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.complete_task_item>form>input{
+  float: left;
+  margin-left: .3vw;
+  width: 30px;
+  height: 30px;
+}
+
+#add_task_form{
+  margin-top: 100px;
+  text-align: center;
+}
+
+#add_task_form > input{
+  box-sizing: border-box;
+  height: 42px;
+  width: 500px;
+}
+
+#need_login{
+  margin-top: 8vh;
+  text-align: center;
+}
+
+.login ,.accept_login,.logout{
+  display: block;
+  margin: 36px auto 0 auto;
+  width: 164px;
+  height: 60px;
+  border-radius: 4px;
+  border: 2px solid #2293d2;
+}
+
+.nav_item>a>p{
+  margin-bottom: 10vh;
+}
+
+.nav_item>h3{
+  color: #f4f5f7;
+  text-align: center;
+}
+
+.nav_item>.login>a>p{
+  color: #f4f5f7;
+}
+.nav_item> h2,.nav_item>a>p{
+  text-align: center;
+  color: #f4f5f7;
+}
+
+.login a p{
+  text-align: center;
+  padding: 12px 0 0 ;
+  color: #2293d2;
+}
+
+.accept_login a p {
+  text-align: center;
+  padding: 12px 0 0 ;
+  color: #2293d2;
+}
+
+.logout a p{
+  text-align: center;
+  padding: 12px 0 0 ;
+  color: #2293d2;
+}
+
+
+.accept_login{
+  margin-top: 10%;
+}
+
+#post-status{
+  float: left;
+}
+
+
+

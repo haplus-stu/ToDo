@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  script(src="https://code.jquery.com/jquery-3.1.1.js")
+  script(src="/static/javascripts/index_control.js")
+  div(class='menu_wrapper')
+    button(id='menu_btn')
+    div(class='menu_container')
+      nav(class='menu_nav')
+        ul(class='menu')
+          li(class='nav_item')
+            a(href='/')
+              p ホーム
+
+  h1(id='title') 完了済みのタスク
+  form(action="/task/all-reset-tasks", method="post")
+    button(type="submit") すべてをもとに戻す
+  ul(id='comleteTask')
+    each task in completed_tasks
+        li(class='task_item') #{task.taskname}

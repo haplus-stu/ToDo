@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(class='cover_all')
+      input(type="text", name="now_tag")
+
+      h1 #{title}
+      div 
+        if user
+          a(href='/logout') #{user.username}
+          ul(class='task_container')
+    
+          form(action="/posted", method="post")
+            input(type="text" name='add_task')
+            input(type="submit", value="+" onclock='')
+        
+        else
+          a(href="/login") ログイン

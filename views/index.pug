@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  script(src="https://code.jquery.com/jquery-3.1.1.js")
+  script(src="/static/javascripts/index_control.js")
+  div(class='page_wrapper')
+    //-ハンバーガメニュー
+    div(class='menu_wrapper')
+      input(type='image' id='menu_btn' src='/static/images/menu_icon.png')
+      div(class='menu_container')
+        nav(class='menu_nav')
+          h1(id='title')= title
+          ul(class='menu')
+            li(class='nav_item')
+
+            if user
+              li(class='nav_item')
+                h2 #{user.username} 
+                div(class='logout')
+                  a(href="/logout") 
+                    p ログアウト
+                    
+            else
+              li(class='nav_item') 
+                h3 ログインしていません
+                div(class='login')
+                  a( href="/login")
+                    p Login
+   
+
+    div
+      if user
+        h2(id='active_task') 現在進行中のタスク
+        - let hasTask = tasks.length > 0
+          if hasTask
+            ul(id='nowTask')
+              each task in tasks
+                -let complete = task.status =='完了'
+                if  complete
+                  li(class='complete_task_item') #{task.taskname}
+                    p(class='check_mark') ✔
+                    form(method="post", action=`/task/${task.taskId}?updateStatus=0`)
+                      input(type='image' src='/static/images/return_icon.png')
+                    form(method='post',action=`/task/${task.taskId}?delete=1`)
+                      input(class='delete' type='image' src='/static/images/delete.png')         
+                else
+                  li(class='task_item') #{task.taskname}
+                    form(id='post-status' action=`/task/${task.taskId}?updateStatus=1`, method="post")
+                      input(id='status',type="checkbox",onchange='submit(this.form)')
+                    form(method='post',action=`/task/${task.taskId}?delete=1`)
+                      input(class='delete' type='image' src='/static/images/delete.png')         
+
+          form(id='add_task_form',action="/task", method="post")
+            input(type="text" name='task')
+            button(type="submit") + 
+      else
+        h1(id='need_login') Todoリストを利用するにはログインしてください
+        div(class='login')
+          a( href="/login")
+            p Login

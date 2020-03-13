@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div(class='accept_login')
+    a(href="/auth/github") 
+      p GitHubでログイン
+  
+  if user
+     p 現在#{user.username} でログイン中
