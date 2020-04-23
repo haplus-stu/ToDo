@@ -18,7 +18,7 @@
     "morgan": "~1.10.0",
     "passport": "^0.4.1",
     "passport-github2": "^0.1.11",
-    "pg": "^8.0.0",
+    "pg": "^8.0.3",
     "pg-hstore": "^2.3.3",
     "pug": "2.0.4",
     "sequelize": "^5.21.6"
